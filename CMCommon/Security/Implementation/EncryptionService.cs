@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.IO;
+using CMCommon.Security.Interfaces;
 
 namespace CMCommon.Security.Implementation
 {
     /// <summary>
     /// Common functions to do simple encryption
     /// </summary>
-    public class EncryptionService
+    public class EncryptionService : IEncryptionService
     {
         private string eKey = "cyberminds";
 

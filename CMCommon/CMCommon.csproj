@@ -51,6 +51,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\Implementation\EncryptionService.cs" />
     <Compile Include="Security\Interfaces\IEncryptionService.cs" />
+    <Compile Include="Utils\Implementation\RandomStringGenerator.cs" />
+    <Compile Include="Utils\Interfaces\IRandomStringGenerator.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

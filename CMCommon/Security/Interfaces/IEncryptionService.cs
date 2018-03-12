@@ -3,6 +3,8 @@ namespace CMCommon.Security.Interfaces
 {
     public interface IEncryptionService
     {
+        string Encrypt(string str);
+
         string Encrypt(string clearText, string Password);
 
         byte[] Encrypt(byte[] clearData, byte[] Key, byte[] IV);
