@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\Implementation\OCKAuthService.cs" />
+    <Compile Include="Authentication\Interfaces\IOAuthService.cs" />
+    <Compile Include="Authentication\Model\ClientUser.cs" />
+    <Compile Include="Authentication\Model\ProfileCheck.cs" />
     <Compile Include="Enums\ReturnStatus.cs" />
     <Compile Include="Logging\Implementation\DBLoggerService.cs" />
     <Compile Include="Emailing\Implementation\EmailService.cs" />
