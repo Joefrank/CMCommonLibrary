@@ -84,6 +84,7 @@ namespace CMCommon.Authentication.Implementation
         public OckAuthService(ILoggerService logger)
         {
             _context = HttpContext.Current;
+            _logger = logger;
         }
         
         public OckAuthService(ILoggerService logger, string cookieDomain, string cookiePrefix)
@@ -91,6 +92,7 @@ namespace CMCommon.Authentication.Implementation
             _context = HttpContext.Current;
             _cookiePrefix = cookiePrefix;
             _cookieDomain = cookieDomain;
+            _logger = logger;
         }
 
         public OckAuthService(IEncryptionService encryptionService, ILoggerService logger, string cookieDomain, string cookiePrefix)
@@ -99,6 +101,7 @@ namespace CMCommon.Authentication.Implementation
             _context = HttpContext.Current;
             _cookiePrefix = cookiePrefix;
             _cookieDomain = cookieDomain;
+            _logger = logger;
         }
 
         #endregion
