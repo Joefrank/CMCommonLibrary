@@ -28,24 +28,24 @@ namespace CMCommon.Authentication.Models
 
         public TimeSpan CookieDuration { get; set; }
 
-        public bool IsInRole(List<string> roles)
+        public bool IsInRole(string role)
         {
-            return !roles.Except(Roles).Any();
+            return Roles.Any() && Roles.Any(x => x.Trim().Equals(role.Trim(), StringComparison.CurrentCultureIgnoreCase));
         }        
 
         public bool HasRole(string role)
         {
-            return Roles.Contains(role);
+            return Roles.Contains(role.Trim());
         }
 
-        public bool IsInProfile(List<string> profiles)
+        public bool IsInProfile(string profile)
         {
-            return !profiles.Except(Profiles).Any();
+            return Profiles.Any() && Profiles.Any(x => x.Trim().Equals(profile.Trim(), StringComparison.CurrentCultureIgnoreCase));
         }       
 
         public bool HasProfile(int profileid)
         {
-            return this.Profiles.Contains(profileid.ToString());
+            return Profiles.Any() && Profiles.Contains(profileid.ToString());
         }
 
         public bool IsLogged()

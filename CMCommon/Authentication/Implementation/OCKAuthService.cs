@@ -203,8 +203,8 @@ namespace CMCommon.Authentication.Implementation
             try
             {
                 var lstProfiles = !string.IsNullOrEmpty(UserProfiles)? 
-                    (UserProfiles.Split(',').Select(s => s)).ToList() : new List<string>();
-                var lstRoles = UserRoles.Split(',').Select(s => s).ToList();
+                    (UserProfiles.Split(',').Select(s => s.Trim())).ToList() : new List<string>();
+                var lstRoles = UserRoles.Split(',').Select(s => s.Trim()).ToList();
 
                 return new ClientUser
                     {
@@ -274,7 +274,7 @@ namespace CMCommon.Authentication.Implementation
 
         public bool IsUserLoggedIn()
         {
-            return UserId > 0 && UserCompanyId > 0 && !string.IsNullOrEmpty(UserRoles) && 
+            return UserId > 0 && !string.IsNullOrEmpty(UserRoles) && 
                 !string.IsNullOrEmpty(UserEmail) && !string.IsNullOrEmpty(UserFullName);
         }
     }
